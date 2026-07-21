@@ -196,6 +196,64 @@
     margin-bottom: 12px;
   }
 
+  .qr-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px 10px;
+  }
+
+  .qr-card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px 28px;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.1), 0 12px 25px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 460px;
+    border: 4px solid #fff;
+  }
+
+  .qr-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .qr-text {
+    text-align: left;
+  }
+
+  .qr-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7b4bff;
+    margin-bottom: 6px;
+  }
+
+  .qr-sub {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .qr-url {
+    font-size: 12px;
+    color: #333;
+    background: #f4f0ff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    word-break: break-all;
+    display: inline-block;
+  }
+
+  @media (max-width: 480px) {
+    .qr-card { flex-direction: column; text-align: center; }
+    .qr-text { text-align: center; }
+  }
+
   footer {
     text-align: center;
     padding: 30px 15px;
@@ -261,6 +319,17 @@
       <span class="card-btn">Start Story →</span>
     </a>
 
+  </div>
+
+  <div class="qr-section">
+    <div class="qr-card">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=10&data=https%3A%2F%2Fnsb413.github.io%2Flearn-ai%2F" alt="QR code to https://nsb413.github.io/learn-ai/">
+      <div class="qr-text">
+        <div class="qr-title">📱 Share with friends!</div>
+        <div class="qr-sub">Scan this QR code with a phone or tablet camera to open AI Story Time.</div>
+        <span class="qr-url">https://nsb413.github.io/learn-ai/</span>
+      </div>
+    </div>
   </div>
 
   <footer>
