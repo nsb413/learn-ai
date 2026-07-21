@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html><head><style id="qw-theme">:root {
+  --color-bg: #f2f1f4;
+  --color-text: #352f3d;
+  --color-navbar-bg: #eae8ed;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #eae8ed;
+  --color-bg-hover: #dcdadf;
+  --color-surface: #eae8ed;
+  --color-surface-hover: #dcdadf;
+  --color-surface-active: #c1bec6;
+  --color-border: #c1bec6;
+  --color-border-light: #dcdadf;
+  --color-border-strong: #c1bec6;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 18%, transparent);
+  --color-primary-border: #8575ff;
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #eae8ed;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #352f3d;
+  --color-text-secondary: #5e5966;
+  --color-text-tertiary: #7a7582;
+  --color-text-muted: #938f9b;
+  --color-text-on-primary: #f2f1f4;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f4eb;
+  --color-success-border: #c4dccb;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fbe9ea;
+  --color-error-border: #eecbcd;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fdf6e4;
+  --color-warning-border: #f5dda6;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #e6f0fb;
+  --color-info-border: #c0d5ec;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #dcdadf80;
+  --color-shadow: #352f3d40;
+  --color-hover: #352f3d0d;
+  --color-tooltip-bg: #eae8ed;
+  --color-tooltip-text: #352f3d;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #352f3d0f;
+  --shadow-md: 0 4px 12px #352f3d1a;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #367c53;
+  --color-teal: #0c9aa7;
+  --color-code-bg: #eae8ed;
+  --color-code-header-bg: #dcdadf;
+  --color-code-text: #352f3d;
+  --color-code-border: #c1bec6;
+  --color-code-muted: #5e5966;
+  --color-inline-code-bg: #eae8ed;
+  --color-inline-code-text: #352f3d;
+  --color-inline-code-border: #c1bec6;
+  --color-scrollbar-thumb: #c1bec6;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #352f3d;
+  --color-graph-node-text-dim: #938f9b;
+  --color-graph-edge-default: #938f9b;
+  --color-graph-edge-cross: #d08025;
+  --color-graph-edge-text: #5e5966;
+  --color-graph-edge-stroke: #f2f1f4;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #938f9b;
+  --color-graph-cat-file: #3878b0;
+  --color-graph-cat-folder: #5e5966;
+  --color-graph-cat-file-aggregate: #2d6a9f;
+  --color-graph-cat-class: #7138cc;
+  --color-graph-cat-function: #367c53;
+  --color-graph-cat-method: #0c9aa7;
+  --color-graph-cat-variable: #d08025;
+  --color-graph-cat-import: #b06a1a;
+  --color-graph-cat-module: #5e35a8;
+  --color-graph-cat-concept: #933;
+  --color-graph-cat-person: #c44d4d;
+  --color-graph-cat-org: #0c9aa7;
+  --color-graph-cat-organization: #0c9aa7;
+  --color-graph-cat-product: #8e47ff;
+  --color-graph-cat-metric: #c44d78;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #b34d8a;
+  --color-graph-cat-code: #3878b0;
+  --color-graph-cat-doc: #5e5966;
+  --color-graph-cat-url: #367c53;
+  --color-graph-cat-email: #5e35a8;
+  --color-graph-cat-unknown: #938f9b;
+  --color-graph-rel-contains: #938f9b;
+  --color-graph-rel-extends: #7138cc;
+  --color-graph-rel-implements: #3878b0;
+  --color-graph-rel-imports: #d08025;
+  --color-graph-rel-uses: #367c53;
+  --color-graph-rel-calls: #367c53;
+  --color-graph-rel-references: #d08025;
+  --color-graph-rel-related-to: #938f9b;
+  --color-graph-rel-works-on: #933;
+  --color-graph-rel-owns: #0c9aa7;
+  --color-graph-rel-depends-on: #b06a1a;
+  --color-graph-rel-parent-of: #938f9b;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #938f9b;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #eae8ed;
+  --qs-tertiary-background: #eae8ed;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Patrick+Hand&amp;display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--color-bg-secondary, #f5f0e8);
+  font-family: 'Fredoka', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.book-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.page {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.page.exit-left {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Cover Page */
+.page-cover {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  text-align: center;
+}
+.cover-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255,215,0,0.5), 0 4px 8px rgba(0,0,0,0.3);
+  margin-bottom: 8px;
+}
+.cover-subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+  color: #a8d8ea;
+  margin-bottom: 30px;
+}
+.machine-svg { margin: 20px 0; }
+.cover-start {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+}
+.cover-start:hover { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255,215,0,0.6); }
+
+/* Story Pages */
+.page-1 { background: linear-gradient(180deg, #87CEEB 0%, #e0f7fa 60%, #a5d6a7 100%); }
+.page-2 { background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%); }
+.page-3 { background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 50%, #81c784 100%); }
+.page-4 { background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%); }
+.page-5 { background: linear-gradient(180deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%); }
+.page-6 { background: linear-gradient(180deg, #f3e5f5 0%, #ce93d8 50%, #ab47bc 100%); }
+.page-7 { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #1a1a2e 100%); }
+
+.story-text {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+.story-text.light { color: #f0f0f0; }
+
+.scene { position: relative; width: 100%; height: 320px; display: flex; align-items: center; justify-content: center; }
+
+/* Navigation */
+.nav-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  z-index: 100;
+}
+.nav-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+.nav-btn.dark { border-color: rgba(0,0,0,0.3); color: #333; background: rgba(255,255,255,0.5); }
+.nav-btn.dark:hover { background: rgba(255,255,255,0.8); }
+
+/* Page indicator */
+.page-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 100;
+}
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: all 0.3s;
+}
+.dot.active { background: #ffd700; width: 20px; border-radius: 4px; }
+
+/* Animations for scenes */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes grow { 0% { transform: scaleY(1); } 100% { transform: scaleY(2.5) translateY(-60px); } }
+@keyframes shake { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
+@keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes rain-dollars { 0% { transform: translateY(-100px) rotate(0); opacity: 1; } 100% { transform: translateY(300px) rotate(360deg); opacity: 0; } }
+@keyframes fly-away { 0% { transform: translate(0, 0) rotate(0); } 100% { transform: translate(0, -200px) rotate(-10deg); } }
+@keyframes blink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes gear-spin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+@keyframes pulse-glow { 0%, 100% { filter: drop-shadow(0 0 5px rgba(255,215,0,0.5)); } 50% { filter: drop-shadow(0 0 20px rgba(255,215,0,0.8)); } }
+
+.floating { animation: float 3s ease-in-out infinite; }
+.growing { animation: grow 2s ease-in-out forwards; }
+.shaking { animation: shake 0.5s ease-in-out infinite; }
+.sparkling { animation: sparkle 1.5s ease-in-out infinite; }
+.gear-spinning { animation: gear-spin 4s linear infinite; }
+.pulsing { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* Character */
+.character {
+  position: relative;
+  width: 80px;
+  transition: all 1s ease;
+}
+
+/* Speech bubble */
+.speech-bubble {
+  background: white;
+  border-radius: 20px;
+  padding: 12px 20px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  margin-bottom: 10px;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+}
+
+/* Lesson card */
+.lesson-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 24px 32px;
+  max-width: 500px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.lesson-card h3 {
+  font-size: 24px;
+  color: #6a1b9a;
+  margin-bottom: 12px;
+}
+.lesson-card p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.5;
+}
+.lesson-card .tip {
+  background: #f3e5f5;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #6a1b9a;
+}
+
+.star-burst {
+  position: absolute;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+<a href="index.html" title="Back to all stories" style="position:fixed;top:16px;left:16px;z-index:99999;background:linear-gradient(135deg,#ffb400,#ff6b9d);color:#fff;text-decoration:none;padding:12px 20px;border-radius:30px;font-family:'Comic Sans MS','Chalkboard SE','Marker Felt',sans-serif;font-weight:bold;font-size:16px;box-shadow:0 4px 0 rgba(0,0,0,0.2),0 6px 15px rgba(0,0,0,0.25);display:inline-flex;align-items:center;gap:6px;transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-2px) scale(1.05)'" onmouseout="this.style.transform='translateY(0) scale(1)'">🏠 Home</a>
+
+<div class="book-container" id="book">
+  <!-- COVER -->
+  <div class="page page-cover active" data-page="0">
+    <svg class="machine-svg floating" width="180" height="180" viewBox="0 0 180 180">
+      <defs>
+        <linearGradient id="machineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ffd700"></stop>
+          <stop offset="100%" style="stop-color:#ff8c00"></stop>
+        </linearGradient>
+        <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#5c6bc0"></stop>
+          <stop offset="100%" style="stop-color:#3949ab"></stop>
+        </linearGradient>
+      </defs>
+      <!-- Machine body -->
+      <rect x="40" y="50" width="100" height="100" rx="15" fill="url(#bodyGrad)" stroke="#7986cb" stroke-width="2"></rect>
+      <!-- Screen -->
+      <rect x="55" y="65" width="70" height="45" rx="8" fill="#1a237e" stroke="#9fa8da" stroke-width="1"></rect>
+      <text x="90" y="92" text-anchor="middle" fill="#ffd700" font-size="14" font-family="monospace">WISH?</text>
+      <!-- Button -->
+      <circle cx="90" cy="130" r="12" fill="url(#machineGrad)" stroke="#fff" stroke-width="2"></circle>
+      <text x="90" y="135" text-anchor="middle" fill="#1a1a2e" font-size="10" font-weight="bold">★</text>
+      <!-- Antenna -->
+      <line x1="90" y1="50" x2="90" y2="25" stroke="#ffd700" stroke-width="3" stroke-linecap="round"></line>
+      <circle cx="90" cy="20" r="8" fill="#ffd700" class="pulsing"></circle>
+      <!-- Gears -->
+      <circle cx="55" cy="145" r="8" fill="none" stroke="#9fa8da" stroke-width="2" stroke-dasharray="4 3" class="gear-spinning"></circle>
+      <circle cx="125" cy="145" r="8" fill="none" stroke="#9fa8da" stroke-width="2" stroke-dasharray="4 3" class="gear-spinning"></circle>
+      <!-- Stars -->
+      <text x="25" y="40" fill="#ffd700" font-size="16" class="sparkling">✦</text>
+      <text x="150" y="35" fill="#ffd700" font-size="12" class="sparkling" style="animation-delay:0.5s">✦</text>
+      <text x="155" y="140" fill="#ffd700" font-size="14" class="sparkling" style="animation-delay:1s">✦</text>
+    </svg>
+    <div class="cover-title">The Wish Machine</div>
+    <div class="cover-subtitle">A story about saying exactly what you mean</div>
+    <button class="cover-start" onclick="nextPage()">✨ Open the Book ✨</button>
+  </div>
+
+  <!-- PAGE 1: Introduction -->
+  <div class="page page-1" data-page="1">
+    <div class="scene">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <!-- Sky elements -->
+        <circle cx="340" cy="40" r="25" fill="#fff9c4" opacity="0.8"></circle>
+        <circle cx="60" cy="50" r="30" fill="white" opacity="0.6"></circle>
+        <circle cx="80" cy="45" r="25" fill="white" opacity="0.6"></circle>
+        <!-- Ground -->
+        <ellipse cx="200" cy="260" rx="180" ry="30" fill="#66bb6a" opacity="0.5"></ellipse>
+        <!-- Workshop building -->
+        <rect x="120" y="120" width="160" height="120" rx="5" fill="#8d6e63"></rect>
+        <rect x="110" y="110" width="180" height="20" rx="3" fill="#6d4c41"></rect>
+        <!-- Roof -->
+        <polygon points="200,70 100,110 300,110" fill="#d32f2f"></polygon>
+        <!-- Door -->
+        <rect x="175" y="170" width="50" height="70" rx="4" fill="#4e342e"></rect>
+        <circle cx="215" cy="210" r="4" fill="#ffd700"></circle>
+        <!-- Windows -->
+        <rect x="135" y="140" width="30" height="30" rx="3" fill="#bbdefb"></rect>
+        <line x1="150" y1="140" x2="150" y2="170" stroke="#6d4c41" stroke-width="2"></line>
+        <line x1="135" y1="155" x2="165" y2="155" stroke="#6d4c41" stroke-width="2"></line>
+        <rect x="235" y="140" width="30" height="30" rx="3" fill="#bbdefb"></rect>
+        <line x1="250" y1="140" x2="250" y2="170" stroke="#6d4c41" stroke-width="2"></line>
+        <line x1="235" y1="155" x2="265" y2="155" stroke="#6d4c41" stroke-width="2"></line>
+        <!-- Sign -->
+        <rect x="140" y="92" width="120" height="20" rx="3" fill="#fff3e0"></rect>
+        <text x="200" y="106" text-anchor="middle" fill="#4e342e" font-size="10" font-family="Fredoka">PROFESSOR PIXEL'S LAB</text>
+        <!-- Character: Mia -->
+        <g transform="translate(60, 180)">
+          <!-- Body -->
+          <rect x="10" y="30" width="30" height="40" rx="5" fill="#e91e63"></rect>
+          <!-- Head -->
+          <circle cx="25" cy="20" r="16" fill="#ffcc80"></circle>
+          <!-- Hair -->
+          <path d="M10,15 Q25,0 40,15" fill="#5d4037"></path>
+          <circle cx="12" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="38" cy="18" r="5" fill="#5d4037"></circle>
+          <!-- Eyes -->
+          <circle cx="20" cy="20" r="3" fill="#333"></circle>
+          <circle cx="30" cy="20" r="3" fill="#333"></circle>
+          <circle cx="21" cy="19" r="1" fill="white"></circle>
+          <circle cx="31" cy="19" r="1" fill="white"></circle>
+          <!-- Smile -->
+          <path d="M20,27 Q25,32 30,27" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round"></path>
+          <!-- Arms -->
+          <line x1="10" y1="40" x2="0" y2="55" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="40" y1="40" x2="50" y2="50" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <!-- Legs -->
+          <line x1="18" y1="70" x2="15" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="32" y1="70" x2="35" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+          <!-- Backpack -->
+          <rect x="30" y="32" width="14" height="20" rx="4" fill="#7b1fa2"></rect>
+        </g>
+      </svg>
+    </div>
+    <p class="story-text">
+      Mia was a curious girl who loved adventures.<br>
+      One sunny day, she found a mysterious workshop<br>
+      with a glowing sign: <strong>"Professor Pixel's Lab"</strong>
+    </p>
+  </div>
+
+  <!-- PAGE 2: Finding the Machine -->
+  <div class="page page-2" data-page="2">
+    <div class="scene">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <!-- Room interior -->
+        <rect x="0" y="0" width="400" height="280" fill="#fff8e1"></rect>
+        <rect x="0" y="250" width="400" height="30" fill="#d7ccc8"></rect>
+        <!-- Shelves -->
+        <rect x="20" y="40" width="80" height="8" rx="2" fill="#8d6e63"></rect>
+        <rect x="300" y="60" width="80" height="8" rx="2" fill="#8d6e63"></rect>
+        <!-- Potions on shelf -->
+        <rect x="30" y="20" width="12" height="20" rx="3" fill="#e91e63" opacity="0.7"></rect>
+        <rect x="50" y="25" width="10" height="15" rx="3" fill="#2196f3" opacity="0.7"></rect>
+        <rect x="70" y="22" width="14" height="18" rx="3" fill="#4caf50" opacity="0.7"></rect>
+        <!-- Books on shelf -->
+        <rect x="310" y="40" width="8" height="20" fill="#f44336"></rect>
+        <rect x="320" y="38" width="10" height="22" fill="#3f51b5"></rect>
+        <rect x="332" y="42" width="7" height="18" fill="#ff9800"></rect>
+        <rect x="342" y="39" width="9" height="21" fill="#9c27b0"></rect>
+        <!-- THE MACHINE - center -->
+        <g class="floating" style="animation-duration: 2.5s">
+          <rect x="140" y="80" width="120" height="140" rx="20" fill="#3949ab" stroke="#7986cb" stroke-width="3"></rect>
+          <!-- Screen -->
+          <rect x="160" y="100" width="80" height="50" rx="10" fill="#0d47a1"></rect>
+          <text x="200" y="128" text-anchor="middle" fill="#76ff03" font-size="12" font-family="monospace">READY FOR</text>
+          <text x="200" y="144" text-anchor="middle" fill="#76ff03" font-size="12" font-family="monospace">YOUR WISH!</text>
+          <!-- Big button -->
+          <circle cx="200" cy="180" r="18" fill="#ffd700" stroke="#ff8f00" stroke-width="3"></circle>
+          <text x="200" y="186" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">★</text>
+          <!-- Dials -->
+          <circle cx="165" cy="180" r="8" fill="#78909c" stroke="#546e7a" stroke-width="2"></circle>
+          <circle cx="235" cy="180" r="8" fill="#78909c" stroke="#546e7a" stroke-width="2"></circle>
+          <!-- Antenna -->
+          <line x1="200" y1="80" x2="200" y2="55" stroke="#ffd700" stroke-width="4" stroke-linecap="round"></line>
+          <circle cx="200" cy="48" r="10" fill="#ffd700"></circle>
+          <!-- Sparkles -->
+          <text x="130" y="75" fill="#ffd700" font-size="18" class="sparkling">✦</text>
+          <text x="265" y="90" fill="#ffd700" font-size="14" class="sparkling" style="animation-delay:0.7s">✦</text>
+          <text x="145" y="230" fill="#ffd700" font-size="12" class="sparkling" style="animation-delay:1.2s">✦</text>
+        </g>
+        <!-- Sign on machine -->
+        <rect x="155" y="210" width="90" height="18" rx="4" fill="#fff3e0"></rect>
+        <text x="200" y="223" text-anchor="middle" fill="#e65100" font-size="9" font-family="Fredoka">⚠️ BE SPECIFIC! ⚠️</text>
+        <!-- Mia looking amazed -->
+        <g transform="translate(50, 160)">
+          <rect x="10" y="30" width="30" height="40" rx="5" fill="#e91e63"></rect>
+          <circle cx="25" cy="20" r="16" fill="#ffcc80"></circle>
+          <path d="M10,15 Q25,0 40,15" fill="#5d4037"></path>
+          <circle cx="12" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="38" cy="18" r="5" fill="#5d4037"></circle>
+          <!-- Wide eyes (amazed) -->
+          <circle cx="20" cy="20" r="4" fill="#333"></circle>
+          <circle cx="30" cy="20" r="4" fill="#333"></circle>
+          <circle cx="21" cy="18" r="1.5" fill="white"></circle>
+          <circle cx="31" cy="18" r="1.5" fill="white"></circle>
+          <!-- Open mouth (amazed) -->
+          <ellipse cx="25" cy="29" rx="4" ry="3" fill="#333"></ellipse>
+          <!-- Arms up -->
+          <line x1="10" y1="38" x2="-5" y2="25" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="40" y1="38" x2="55" y2="25" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="18" y1="70" x2="15" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="32" y1="70" x2="35" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+        </g>
+      </svg>
+    </div>
+    <p class="story-text">
+      Inside, she found the most incredible thing —<br>
+      <strong>The Wish Machine!</strong> It glowed and hummed.<br>
+      A tiny sign said: <em>"Warning: Be SPECIFIC!"</em><br>
+      But Mia was too excited to read it carefully...
+    </p>
+  </div>
+
+  <!-- PAGE 3: Wish 1 - "I want to be tall" -->
+  <div class="page page-3" data-page="3">
+    <div class="speech-bubble">💭 "I wish to be <strong>tall</strong>!"</div>
+    <div class="scene">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <!-- Room -->
+        <rect x="0" y="0" width="400" height="280" fill="#e8f5e9"></rect>
+        <!-- Ceiling with cracks -->
+        <rect x="0" y="0" width="400" height="15" fill="#bdbdbd"></rect>
+        <line x1="180" y1="0" x2="200" y2="15" stroke="#757575" stroke-width="1"></line>
+        <line x1="200" y1="15" x2="220" y2="5" stroke="#757575" stroke-width="1"></line>
+        <line x1="220" y1="5" x2="240" y2="15" stroke="#757575" stroke-width="1"></line>
+        <!-- Floor -->
+        <rect x="0" y="250" width="400" height="30" fill="#a5d6a7"></rect>
+        <!-- Furniture for scale -->
+        <rect x="20" y="200" width="60" height="50" rx="3" fill="#8d6e63"></rect>
+        <rect x="320" y="180" width="60" height="70" rx="3" fill="#6d4c41"></rect>
+        <rect x="325" y="185" width="50" height="40" rx="2" fill="#bbdefb"></rect>
+        <!-- TALL Mia - stretched to ceiling! -->
+        <g id="tall-mia">
+          <!-- Very long body -->
+          <rect x="175" y="15" width="50" height="235" rx="8" fill="#e91e63"></rect>
+          <!-- Head squished against ceiling -->
+          <circle cx="200" cy="25" r="18" fill="#ffcc80"></circle>
+          <path d="M183,18 Q200,3 217,18" fill="#5d4037"></path>
+          <!-- Dizzy eyes -->
+          <text x="192" y="27" font-size="10">😵</text>
+          <text x="202" y="27" font-size="10">😵</text>
+          <!-- Distressed mouth -->
+          <path d="M192,34 Q200,30 208,34" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"></path>
+          <!-- Very long arms -->
+          <line x1="175" y1="80" x2="140" y2="120" stroke="#ffcc80" stroke-width="6" stroke-linecap="round"></line>
+          <line x1="225" y1="80" x2="260" y2="120" stroke="#ffcc80" stroke-width="6" stroke-linecap="round"></line>
+          <!-- Feet at bottom -->
+          <rect x="178" y="245" width="18" height="10" rx="5" fill="#333"></rect>
+          <rect x="202" y="245" width="18" height="10" rx="5" fill="#333"></rect>
+          <!-- Impact stars at ceiling -->
+          <text x="160" y="20" fill="#ff5722" font-size="16">💥</text>
+          <text x="225" y="15" fill="#ff5722" font-size="14">💥</text>
+        </g>
+        <!-- Ceiling debris -->
+        <rect x="185" y="12" width="8" height="5" fill="#9e9e9e" transform="rotate(15 189 14)"></rect>
+        <rect x="210" y="10" width="6" height="4" fill="#9e9e9e" transform="rotate(-10 213 12)"></rect>
+        <!-- Machine in corner (small) -->
+        <g transform="translate(300, 210) scale(0.4)">
+          <rect x="0" y="0" width="80" height="90" rx="12" fill="#3949ab"></rect>
+          <rect x="10" y="10" width="60" height="35" rx="6" fill="#0d47a1"></rect>
+          <text x="40" y="32" text-anchor="middle" fill="#76ff03" font-size="11" font-family="monospace">DONE!</text>
+          <circle cx="40" cy="65" r="10" fill="#ffd700"></circle>
+        </g>
+      </svg>
+    </div>
+    <p class="story-text">
+      ⚡ <strong>ZZZZAP!</strong> ⚡ Mia shot up like a rocket!<br>
+      She grew and grew until — <strong>BONK!</strong> — her head<br>
+      crashed right through the ceiling! 🏠💥<br>
+      <em>"That's NOT what I meant!"</em> she cried.
+    </p>
+  </div>
+
+  <!-- PAGE 4: Wish 2 - "I want to fly" -->
+  <div class="page page-4" data-page="4">
+    <div class="speech-bubble">💭 "I wish I could <strong>fly</strong>!"</div>
+    <div class="scene">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <!-- Sky background is from page class -->
+        <circle cx="350" cy="40" r="20" fill="#fff9c4" opacity="0.9"></circle>
+        <!-- Clouds -->
+        <g opacity="0.7">
+          <circle cx="60" cy="60" r="20" fill="white"></circle>
+          <circle cx="80" cy="55" r="25" fill="white"></circle>
+          <circle cx="105" cy="60" r="18" fill="white"></circle>
+        </g>
+        <g opacity="0.5">
+          <circle cx="300" cy="90" r="15" fill="white"></circle>
+          <circle cx="320" cy="85" r="20" fill="white"></circle>
+          <circle cx="340" cy="90" r="14" fill="white"></circle>
+        </g>
+        <!-- Ground far below -->
+        <ellipse cx="200" cy="275" rx="200" ry="15" fill="#66bb6a" opacity="0.3"></ellipse>
+        <!-- Tiny houses below -->
+        <rect x="80" y="255" width="15" height="12" fill="#ef5350" opacity="0.4"></rect>
+        <rect x="150" y="258" width="12" height="9" fill="#42a5f5" opacity="0.4"></rect>
+        <rect x="250" y="256" width="14" height="11" fill="#ffa726" opacity="0.4"></rect>
+        <!-- Mia turned into a FLY! -->
+        <g transform="translate(160, 100)" class="floating" style="animation-duration: 1.5s">
+          <!-- Fly body -->
+          <ellipse cx="40" cy="50" rx="20" ry="14" fill="#333"></ellipse>
+          <!-- Fly head -->
+          <circle cx="65" cy="48" r="12" fill="#444"></circle>
+          <!-- Huge compound eyes -->
+          <circle cx="70" cy="43" r="8" fill="#e53935"></circle>
+          <circle cx="62" cy="43" r="8" fill="#e53935"></circle>
+          <!-- Tiny highlights in eyes -->
+          <circle cx="72" cy="41" r="2" fill="#ffcdd2"></circle>
+          <circle cx="64" cy="41" r="2" fill="#ffcdd2"></circle>
+          <!-- Wings -->
+          <ellipse cx="35" cy="30" rx="25" ry="12" fill="rgba(200,230,255,0.6)" stroke="#90caf9" stroke-width="1"></ellipse>
+          <ellipse cx="45" cy="28" rx="22" ry="10" fill="rgba(200,230,255,0.5)" stroke="#90caf9" stroke-width="1"></ellipse>
+          <!-- Legs -->
+          <line x1="30" y1="60" x2="25" y2="72" stroke="#333" stroke-width="1.5"></line>
+          <line x1="40" y1="62" x2="38" y2="74" stroke="#333" stroke-width="1.5"></line>
+          <line x1="50" y1="60" x2="52" y2="72" stroke="#333" stroke-width="1.5"></line>
+          <!-- Mia's bow (to identify her) -->
+          <path d="M55,35 L60,30 L65,35 L60,32 Z" fill="#e91e63"></path>
+          <!-- Proboscis -->
+          <line x1="76" y1="50" x2="85" y2="55" stroke="#333" stroke-width="1.5"></line>
+          <!-- Motion lines -->
+          <line x1="5" y1="45" x2="-10" y2="45" stroke="#90caf9" stroke-width="1.5" opacity="0.5"></line>
+          <line x1="8" y1="52" x2="-5" y2="52" stroke="#90caf9" stroke-width="1.5" opacity="0.5"></line>
+        </g>
+        <!-- "BZZZZ" text -->
+        <text x="280" y="130" fill="#333" font-size="16" font-family="Patrick Hand" opacity="0.7" transform="rotate(-5 280 130)">Bzzzzz!</text>
+        <!-- Thought bubble from fly-Mia -->
+        <circle cx="240" cy="90" r="4" fill="white" opacity="0.8"></circle>
+        <circle cx="252" cy="78" r="6" fill="white" opacity="0.8"></circle>
+        <rect x="255" y="55" width="120" height="30" rx="15" fill="white"></rect>
+        <text x="315" y="75" text-anchor="middle" fill="#333" font-size="11" font-family="Patrick Hand">I'm a FLY?! 😱</text>
+      </svg>
+    </div>
+    <p class="story-text">
+      ⚡ <strong>ZZZZAP!</strong> ⚡ Mia didn't get wings...<br>
+      She turned into an <em>actual fly!</em> 🪰<br>
+      <em>"I said FLY, not BE a fly!"</em> she buzzed angrily.<br>
+      The machine just blinked: <strong>WISH GRANTED ✓</strong>
+    </p>
+  </div>
+
+  <!-- PAGE 5: Wish 3 - "I want a million bucks" -->
+  <div class="page page-5" data-page="5">
+    <div class="speech-bubble">💭 "I want a million <strong>bucks</strong>!"</div>
+    <div class="scene">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <!-- Park background -->
+        <rect x="0" y="220" width="400" height="60" fill="#81c784"></rect>
+        <!-- Trees -->
+        <circle cx="30" cy="180" r="30" fill="#388e3c" opacity="0.6"></circle>
+        <rect x="27" y="200" width="6" height="30" fill="#5d4037"></rect>
+        <circle cx="370" cy="170" r="35" fill="#2e7d32" opacity="0.6"></circle>
+        <rect x="367" y="195" width="6" height="35" fill="#5d4037"></rect>
+        <!-- DEER EVERYWHERE -->
+        <!-- Deer 1 -->
+        <g transform="translate(40, 160) scale(0.7)">
+          <ellipse cx="40" cy="40" rx="25" ry="18" fill="#8d6e63"></ellipse>
+          <circle cx="65" cy="28" r="10" fill="#a1887f"></circle>
+          <line x1="60" y1="18" x2="55" y2="5" stroke="#5d4037" stroke-width="2"></line>
+          <line x1="55" y1="5" x2="50" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <line x1="55" y1="5" x2="58" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <line x1="68" y1="18" x2="72" y2="5" stroke="#5d4037" stroke-width="2"></line>
+          <line x1="72" y1="5" x2="68" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <line x1="72" y1="5" x2="76" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <circle cx="68" cy="26" r="2" fill="#333"></circle>
+          <line x1="28" y1="58" x2="25" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="38" y1="58" x2="36" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="48" y1="58" x2="50" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="55" y1="56" x2="58" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+        </g>
+        <!-- Deer 2 -->
+        <g transform="translate(260, 150) scale(0.7)">
+          <ellipse cx="40" cy="40" rx="25" ry="18" fill="#8d6e63"></ellipse>
+          <circle cx="15" cy="28" r="10" fill="#a1887f"></circle>
+          <line x1="10" y1="18" x2="5" y2="3" stroke="#5d4037" stroke-width="2"></line>
+          <line x1="5" y1="3" x2="1" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <line x1="5" y1="3" x2="9" y2="0" stroke="#5d4037" stroke-width="1.5"></line>
+          <line x1="18" y1="18" x2="22" y2="3" stroke="#5d4037" stroke-width="2"></line>
+          <circle cx="12" cy="26" r="2" fill="#333"></circle>
+          <line x1="28" y1="58" x2="25" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="38" y1="58" x2="36" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="48" y1="58" x2="50" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+          <line x1="55" y1="56" x2="58" y2="80" stroke="#6d4c41" stroke-width="4"></line>
+        </g>
+        <!-- Deer 3 (baby) -->
+        <g transform="translate(150, 190) scale(0.5)">
+          <ellipse cx="40" cy="40" rx="20" ry="14" fill="#bcaaa4"></ellipse>
+          <circle cx="58" cy="30" r="8" fill="#d7ccc8"></circle>
+          <circle cx="60" cy="28" r="2" fill="#333"></circle>
+          <line x1="30" y1="54" x2="28" y2="72" stroke="#8d6e63" stroke-width="3"></line>
+          <line x1="38" y1="54" x2="36" y2="72" stroke="#8d6e63" stroke-width="3"></line>
+          <line x1="48" y1="54" x2="50" y2="72" stroke="#8d6e63" stroke-width="3"></line>
+          <line x1="52" y1="52" x2="55" y2="72" stroke="#8d6e63" stroke-width="3"></line>
+        </g>
+        <!-- Deer 4 -->
+        <g transform="translate(310, 180) scale(0.55)">
+          <ellipse cx="40" cy="40" rx="22" ry="16" fill="#795548"></ellipse>
+          <circle cx="18" cy="30" r="9" fill="#8d6e63"></circle>
+          <circle cx="15" cy="28" r="2" fill="#333"></circle>
+          <line x1="13" y1="20" x2="8" y2="5" stroke="#5d4037" stroke-width="2"></line>
+          <line x1="30" y1="56" x2="28" y2="75" stroke="#5d4037" stroke-width="3.5"></line>
+          <line x1="40" y1="56" x2="38" y2="75" stroke="#5d4037" stroke-width="3.5"></line>
+          <line x1="48" y1="54" x2="50" y2="75" stroke="#5d4037" stroke-width="3.5"></line>
+        </g>
+        <!-- More deer silhouettes in background -->
+        <ellipse cx="100" cy="210" rx="15" ry="10" fill="#6d4c41" opacity="0.4"></ellipse>
+        <ellipse cx="200" cy="215" rx="13" ry="9" fill="#6d4c41" opacity="0.3"></ellipse>
+        <ellipse cx="340" cy="218" rx="14" ry="9" fill="#6d4c41" opacity="0.3"></ellipse>
+        <!-- Counter -->
+        <rect x="10" y="10" width="130" height="35" rx="8" fill="rgba(0,0,0,0.7)"></rect>
+        <text x="75" y="33" text-anchor="middle" fill="#ffd700" font-size="14" font-family="monospace">🦌 × 1,000,000</text>
+        <!-- Mia buried in deer (just her head visible) -->
+        <g transform="translate(170, 140)">
+          <circle cx="25" cy="20" r="16" fill="#ffcc80"></circle>
+          <path d="M10,15 Q25,0 40,15" fill="#5d4037"></path>
+          <circle cx="12" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="38" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="20" cy="20" r="4" fill="#333"></circle>
+          <circle cx="30" cy="20" r="4" fill="#333"></circle>
+          <path d="M18,28 L32,28" stroke="#333" stroke-width="2" stroke-linecap="round"></path>
+          <text x="25" y="45" text-anchor="middle" font-size="9" fill="#333">Help!</text>
+        </g>
+      </svg>
+    </div>
+    <p class="story-text">
+      ⚡ <strong>ZZZZAP!</strong> ⚡ The machine rumbled...<br>
+      A MILLION <strong>deer</strong> appeared! 🦌🦌🦌<br>
+      (Bucks = male deer, get it?)<br>
+      <em>"No no no! I meant MONEY!"</em> Mia wailed.
+    </p>
+  </div>
+
+  <!-- PAGE 6: The Lesson -->
+  <div class="page page-6" data-page="6">
+    <div class="scene" style="height: auto;">
+      <svg width="200" height="120" viewBox="0 0 200 120" class="floating" style="animation-duration: 4s;">
+        <!-- Light bulb -->
+        <circle cx="100" cy="50" r="35" fill="#fff9c4" stroke="#ffd600" stroke-width="3"></circle>
+        <rect x="88" y="80" width="24" height="12" rx="3" fill="#bdbdbd"></rect>
+        <rect x="92" y="92" width="16" height="4" rx="2" fill="#9e9e9e"></rect>
+        <!-- Filament -->
+        <path d="M92,55 Q96,40 100,55 Q104,40 108,55" fill="none" stroke="#ff8f00" stroke-width="2"></path>
+        <!-- Glow rays -->
+        <line x1="100" y1="5" x2="100" y2="12" stroke="#ffd600" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="140" y1="50" x2="147" y2="50" stroke="#ffd600" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="53" y1="50" x2="60" y2="50" stroke="#ffd600" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="128" y1="22" x2="133" y2="17" stroke="#ffd600" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="67" y1="22" x2="72" y2="17" stroke="#ffd600" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </div>
+    <div class="lesson-card">
+      <h3>💡 Mia's Big Realization</h3>
+      <p>The machine wasn't broken — it did EXACTLY what she said!<br>The problem was <strong>how</strong> she asked.</p>
+      <div class="tip">
+        <strong>🎯 The Secret:</strong> Say exactly what you mean!<br>
+        ❌ "I want to be tall" → grows forever<br>
+        ✅ "I want to be 5 feet tall" → just right!<br><br>
+        ❌ "I want to fly" → becomes a fly<br>
+        ✅ "I want to soar through the air with wings" → perfect!<br><br>
+        ❌ "I want a million bucks" → deer everywhere<br>
+        ✅ "I want a million dollars in my piggy bank" → 💰
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 7: Happy Ending -->
+  <div class="page page-7" data-page="7">
+    <div class="scene" style="height: auto;">
+      <svg width="300" height="200" viewBox="0 0 300 200">
+        <!-- Stars background -->
+        <circle cx="30" cy="30" r="2" fill="#ffd700" class="sparkling"></circle>
+        <circle cx="270" cy="40" r="1.5" fill="#ffd700" class="sparkling" style="animation-delay:0.3s"></circle>
+        <circle cx="50" cy="100" r="1" fill="#ffd700" class="sparkling" style="animation-delay:0.6s"></circle>
+        <circle cx="250" cy="120" r="2" fill="#ffd700" class="sparkling" style="animation-delay:0.9s"></circle>
+        <circle cx="150" cy="20" r="1.5" fill="#ffd700" class="sparkling" style="animation-delay:1.2s"></circle>
+        <circle cx="80" cy="150" r="1" fill="#ffd700" class="sparkling" style="animation-delay:0.4s"></circle>
+        <circle cx="220" cy="170" r="1.5" fill="#ffd700" class="sparkling" style="animation-delay:0.8s"></circle>
+        <!-- Mia and Machine together, happy -->
+        <!-- Machine -->
+        <g transform="translate(80, 50)">
+          <rect x="0" y="0" width="80" height="100" rx="15" fill="#3949ab" stroke="#7986cb" stroke-width="2"></rect>
+          <rect x="12" y="12" width="56" height="35" rx="8" fill="#0d47a1"></rect>
+          <!-- Happy face on screen -->
+          <circle cx="32" cy="32" r="3" fill="#76ff03"></circle>
+          <circle cx="48" cy="32" r="3" fill="#76ff03"></circle>
+          <path d="M30,38 Q40,46 50,38" fill="none" stroke="#76ff03" stroke-width="2" stroke-linecap="round"></path>
+          <circle cx="40" cy="70" r="12" fill="#ffd700"></circle>
+          <text x="40" y="75" text-anchor="middle" fill="#333" font-size="12">♥</text>
+          <!-- Antenna with heart -->
+          <line x1="40" y1="0" x2="40" y2="-20" stroke="#ffd700" stroke-width="3"></line>
+          <text x="40" y="-22" text-anchor="middle" font-size="16">💛</text>
+        </g>
+        <!-- Mia (normal sized, happy) -->
+        <g transform="translate(180, 70)">
+          <rect x="10" y="30" width="30" height="40" rx="5" fill="#e91e63"></rect>
+          <circle cx="25" cy="20" r="16" fill="#ffcc80"></circle>
+          <path d="M10,15 Q25,0 40,15" fill="#5d4037"></path>
+          <circle cx="12" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="38" cy="18" r="5" fill="#5d4037"></circle>
+          <circle cx="20" cy="20" r="3" fill="#333"></circle>
+          <circle cx="30" cy="20" r="3" fill="#333"></circle>
+          <circle cx="21" cy="19" r="1" fill="white"></circle>
+          <circle cx="31" cy="19" r="1" fill="white"></circle>
+          <!-- Big smile -->
+          <path d="M18,27 Q25,34 32,27" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"></path>
+          <!-- Waving arm -->
+          <line x1="40" y1="38" x2="55" y2="25" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="10" y1="40" x2="0" y2="55" stroke="#ffcc80" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="18" y1="70" x2="15" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+          <line x1="32" y1="70" x2="35" y2="90" stroke="#333" stroke-width="5" stroke-linecap="round"></line>
+          <!-- Crown (she wished correctly!) -->
+          <polygon points="15,6 18,12 22,5 25,12 28,5 32,12 35,6 35,15 15,15" fill="#ffd700"></polygon>
+        </g>
+        <!-- Speech from Mia -->
+        <rect x="165" y="5" width="130" height="30" rx="15" fill="white" opacity="0.9"></rect>
+        <text x="230" y="25" text-anchor="middle" fill="#333" font-size="10" font-family="Patrick Hand">"I wish to be happy!" ❤️</text>
+      </svg>
+    </div>
+    <p class="story-text light" style="margin-top: 20px;">
+      Finally, Mia smiled. She typed carefully:<br>
+      <em>"I wish to feel happy and grateful,<br>
+      right here, right now, as myself."</em><br><br>
+      ✨ And the machine glowed warmly... ✨<br>
+      <strong>WISH GRANTED ✓</strong><br><br>
+      Because <em>that</em> wish was already true. 💛
+    </p>
+    <div style="margin-top: 16px; padding: 12px 24px; background: rgba(255,215,0,0.15); border-radius: 12px; text-align: center;">
+      <span style="font-size: 16px; color: #ffd700; font-weight: 600;">~ The End ~</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-buttons" id="nav">
+    <button class="nav-btn dark" id="prevBtn" onclick="prevPage()" style="display:none;">←</button>
+    <button class="nav-btn dark" id="nextBtn" onclick="nextPage()" style="display:none;">→</button>
+  </div>
+  <div class="page-indicator" id="dots"></div>
+</div>
+
+<script>
+let currentPage = 0;
+const totalPages = 8;
+const pages = document.querySelectorAll('.page');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const dotsContainer = document.getElementById('dots');
+
+// Create dots
+for (let i = 0; i < totalPages; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dotsContainer.appendChild(dot);
+}
+
+function updateNav() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((d, i) => d.className = 'dot' + (i === currentPage ? ' active' : ''));
+  prevBtn.style.display = currentPage > 0 ? 'flex' : 'none';
+  nextBtn.style.display = currentPage < totalPages - 1 ? 'flex' : 'none';
+  // Adjust button style based on page background
+  const darkPages = [0, 7];
+  const isDark = darkPages.includes(currentPage);
+  prevBtn.className = 'nav-btn' + (isDark ? '' : ' dark');
+  nextBtn.className = 'nav-btn' + (isDark ? '' : ' dark');
+}
+
+function showPage(index) {
+  pages.forEach((page, i) => {
+    page.classList.remove('active', 'exit-left');
+    if (i < index) page.classList.add('exit-left');
+    if (i === index) page.classList.add('active');
+  });
+  currentPage = index;
+  updateNav();
+}
+
+function nextPage() {
+  if (currentPage < totalPages - 1) showPage(currentPage + 1);
+}
+
+function prevPage() {
+  if (currentPage > 0) showPage(currentPage - 1);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') nextPage();
+  if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Swipe support
+let touchStartX = 0;
+document.getElementById('book').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.getElementById('book').addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (diff > 50) nextPage();
+  if (diff < -50) prevPage();
+});
+
+updateNav();
+</script>
+
+</body></html>

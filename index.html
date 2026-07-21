@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Story Time! 🚀 Learn About AI with Fun Stories</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #a1c4fd 50%, #c2e9fb 75%, #ffd1ff 100%);
+    background-size: 400% 400%;
+    animation: bgShift 20s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  @keyframes bgShift {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Floating background shapes */
+  .float-shape {
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.35;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+    z-index: 0;
+  }
+  .float-shape:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+  .float-shape:nth-child(2) { top: 20%; right: 8%; animation-delay: 2s; }
+  .float-shape:nth-child(3) { bottom: 15%; left: 10%; animation-delay: 4s; }
+  .float-shape:nth-child(4) { bottom: 25%; right: 12%; animation-delay: 1s; }
+  .float-shape:nth-child(5) { top: 50%; left: 3%; animation-delay: 3s; }
+  .float-shape:nth-child(6) { top: 60%; right: 4%; animation-delay: 5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(15deg); }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 15px 20px;
+    color: white;
+  }
+
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    color: #fff;
+    text-shadow: 3px 3px 0 #ff6b9d, 6px 6px 0 rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .subtitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+  }
+
+  .pick-msg {
+    display: inline-block;
+    background: white;
+    color: #7b4bff;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 6px 0 #d1c4e9, 0 8px 20px rgba(0,0,0,0.15);
+    animation: wiggle 3s ease-in-out infinite;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px 10px;
+  }
+
+  .story-card {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.1), 0 15px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--c1), var(--c2));
+  }
+
+  .story-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 15px 0 rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.25);
+  }
+
+  .story-card:active { transform: translateY(-2px); }
+
+  .card-emoji {
+    font-size: 64px;
+    margin: 10px 0 15px;
+    display: inline-block;
+    animation: pop 3s ease-in-out infinite;
+    letter-spacing: -4px;
+    line-height: 1;
+  }
+
+  @keyframes pop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    color: var(--c1);
+  }
+
+  .card-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+
+  .card-btn {
+    background: linear-gradient(135deg, var(--c1), var(--c2));
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .story-card:hover .card-btn { box-shadow: 0 6px 0 rgba(0,0,0,0.2); }
+
+  /* Per-card colors */
+  .card-1 { --c1: #ff6b9d; --c2: #ffa07a; }
+  .card-2 { --c1: #7b4bff; --c2: #4facfe; }
+  .card-3 { --c1: #ffb400; --c2: #ff6b9d; }
+  .card-4 { --c1: #00c9a7; --c2: #4facfe; }
+
+  .tag {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
+  footer .heart { color: #ff6b9d; animation: heartbeat 1.5s ease-in-out infinite; display: inline-block; }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+</style>
+</head>
+<body>
+
+<div class="float-shape">⭐</div>
+<div class="float-shape">🌈</div>
+<div class="float-shape">☁️</div>
+<div class="float-shape">✨</div>
+<div class="float-shape">🎈</div>
+<div class="float-shape">🎨</div>
+
+<div class="container">
+  <header>
+    <h1>🤖 AI Story Time! 🚀</h1>
+    <p class="subtitle">Fun stories that teach you about Artificial Intelligence!</p>
+    <div class="pick-msg">👇 Pick a story to start your adventure! 👇</div>
+  </header>
+
+  <div class="stories-grid">
+
+    <a class="story-card card-1" href="The_Wish_Machine_An_Interactive_Storybook.html">
+      <span class="card-emoji">🧞‍♂️✨</span>
+      <span class="tag">✨ Interactive</span>
+      <h2 class="card-title">The Wish Machine</h2>
+      <p class="card-desc">Mia finds a machine that grants ANY wish — but takes every word literally! "I wish to fly!" 🪰 Oops! Learn why telling AI EXACTLY what you mean really matters.</p>
+      <span class="card-btn">Start Story →</span>
+    </a>
+
+    <a class="story-card card-2" href="The_Two_Twins_Data_and_Model.html">
+      <span class="card-emoji">📊🤖</span>
+      <span class="tag">🧠 Big Ideas</span>
+      <h2 class="card-title">The Two Twins: Data &amp; Model</h2>
+      <p class="card-desc">Meet twins Data and Model! Data collects examples from the world 🌍 and Model spots the patterns 🧠. Together, that's how AI learns — and why it sometimes needs YOUR help!</p>
+      <span class="card-btn">Start Story →</span>
+    </a>
+
+    <a class="story-card card-3" href="The_Robot_Who_Couldn_t_Tell_a_Cat_from_a_Muffin.html">
+      <span class="card-emoji">🐱🧁</span>
+      <span class="tag">😹 Funny</span>
+      <h2 class="card-title">The Robot Who Couldn't Tell a Cat from a Muffin</h2>
+      <p class="card-desc">Meet Blip, a super-smart robot with ONE tiny problem — everything round and fluffy looks like a muffin! 🤪 A silly story about why AI makes mistakes and how humans help fix them.</p>
+      <span class="card-btn">Start Story →</span>
+    </a>
+
+    <a class="story-card card-4" href="Tom_Jerry_s_Space_AI_Adventure.html">
+      <span class="card-emoji">🐱🐭🚀</span>
+      <span class="tag">🌌 Adventure</span>
+      <h2 class="card-title">Tom &amp; Jerry's Space AI Adventure</h2>
+      <p class="card-desc">Tom &amp; Jerry blast into space and meet Astra, a friendly AI! 🤖 Discover patterns, image recognition, and chatbots — the real AI powers that live in your phone and games!</p>
+      <span class="card-btn">Start Story →</span>
+    </a>
+
+  </div>
+
+  <footer>
+    Made with <span class="heart">💖</span> for curious kids everywhere
+  </footer>
+</div>
+
+<script>
+  // Little sparkle on click
+  document.querySelectorAll('.story-card').forEach(card => {
+    card.addEventListener('click', e => {
+      const s = document.createElement('span');
+      s.textContent = '✨';
+      s.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;font-size:40px;pointer-events:none;transition:all 0.8s ease-out;z-index:9999;`;
+      document.body.appendChild(s);
+      requestAnimationFrame(() => {
+        s.style.transform = 'translate(-50%,-100px) scale(2)';
+        s.style.opacity = '0';
+      });
+      setTimeout(() => s.remove(), 800);
+    });
+  });
+</script>
+
+</body>
+</html>
