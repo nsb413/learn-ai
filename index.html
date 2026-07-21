@@ -196,62 +196,108 @@
     margin-bottom: 12px;
   }
 
-  .qr-section {
-    display: flex;
-    justify-content: center;
-    padding: 20px 15px 10px;
-  }
-
-  .qr-card {
+  /* Floating QR badge — always visible in the corner */
+  .qr-float {
+    position: fixed;
+    top: 20px;
+    right: 20px;
     background: white;
-    border-radius: 24px;
-    padding: 20px 28px;
-    box-shadow: 0 8px 0 rgba(0,0,0,0.1), 0 12px 25px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 460px;
-    border: 4px solid #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.1), 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 100;
+    cursor: pointer;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+    text-align: center;
   }
 
-  .qr-card img {
-    width: 130px;
-    height: 130px;
-    border-radius: 12px;
+  .qr-float:hover { transform: scale(1.05); }
+
+  .qr-float img {
+    width: 90px;
+    height: 90px;
     display: block;
+    border-radius: 8px;
   }
 
-  .qr-text {
-    text-align: left;
-  }
-
-  .qr-title {
-    font-size: 20px;
+  .qr-float .qr-label {
+    font-size: 11px;
     font-weight: bold;
     color: #7b4bff;
-    margin-bottom: 6px;
+    margin-top: 6px;
+    line-height: 1.2;
   }
 
-  .qr-sub {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.4;
+  /* Expanded overlay when clicked */
+  .qr-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 20px;
+  }
+
+  .qr-overlay.open { display: flex; }
+
+  .qr-overlay-card {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+    animation: popIn 0.3s ease;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .qr-overlay-card img {
+    width: 280px;
+    height: 280px;
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  .qr-overlay-card h3 {
+    font-size: 24px;
+    color: #7b4bff;
     margin-bottom: 8px;
   }
 
-  .qr-url {
-    font-size: 12px;
+  .qr-overlay-card p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .qr-overlay-card .qr-url {
+    font-size: 13px;
     color: #333;
     background: #f4f0ff;
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 14px;
     word-break: break-all;
     display: inline-block;
   }
 
-  @media (max-width: 480px) {
-    .qr-card { flex-direction: column; text-align: center; }
-    .qr-text { text-align: center; }
+  .qr-close-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 14px;
+  }
+
+  @media (max-width: 600px) {
+    .qr-float { top: 10px; right: 10px; padding: 6px; border-radius: 14px; }
+    .qr-float img { width: 60px; height: 60px; }
+    .qr-float .qr-label { font-size: 9px; margin-top: 3px; }
   }
 
   footer {
@@ -277,6 +323,21 @@
 <div class="float-shape">✨</div>
 <div class="float-shape">🎈</div>
 <div class="float-shape">🎨</div>
+
+<div class="qr-float" id="qrFloat" title="Scan or tap to share">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=6&data=https%3A%2F%2Fnsb413.github.io%2Flearn-ai%2F" alt="QR code to https://nsb413.github.io/learn-ai/">
+  <div class="qr-label">📱 Scan me!</div>
+</div>
+
+<div class="qr-overlay" id="qrOverlay">
+  <div class="qr-overlay-card">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=https%3A%2F%2Fnsb413.github.io%2Flearn-ai%2F" alt="Large QR code to https://nsb413.github.io/learn-ai/">
+    <h3>📱 Share AI Story Time!</h3>
+    <p>Point a phone camera at the QR code to open the site.</p>
+    <span class="qr-url">https://nsb413.github.io/learn-ai/</span>
+    <div class="qr-close-hint">Tap anywhere to close</div>
+  </div>
+</div>
 
 <div class="container">
   <header>
@@ -321,23 +382,18 @@
 
   </div>
 
-  <div class="qr-section">
-    <div class="qr-card">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=10&data=https%3A%2F%2Fnsb413.github.io%2Flearn-ai%2F" alt="QR code to https://nsb413.github.io/learn-ai/">
-      <div class="qr-text">
-        <div class="qr-title">📱 Share with friends!</div>
-        <div class="qr-sub">Scan this QR code with a phone or tablet camera to open AI Story Time.</div>
-        <span class="qr-url">https://nsb413.github.io/learn-ai/</span>
-      </div>
-    </div>
-  </div>
-
   <footer>
     Made with <span class="heart">💖</span> for curious kids everywhere
   </footer>
 </div>
 
 <script>
+  // Tap the floating QR to enlarge it
+  const qrFloat = document.getElementById('qrFloat');
+  const qrOverlay = document.getElementById('qrOverlay');
+  qrFloat.addEventListener('click', () => qrOverlay.classList.add('open'));
+  qrOverlay.addEventListener('click', () => qrOverlay.classList.remove('open'));
+
   // Little sparkle on click
   document.querySelectorAll('.story-card').forEach(card => {
     card.addEventListener('click', e => {
